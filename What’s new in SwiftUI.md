@@ -1,0 +1,70 @@
+# What's new in SwiftUI
+
+- AsyncImageの追加
+  - placeholder、success/failureハンドラ使える
+- refreshableModifier追加
+  - async/await対応
+  - UIをブロックせずに実行できる
+- taskModifier追加
+  - 画面表示時に実行が開始され、Viewが削除される時に自動キャンセルする
+  - async/await対応
+    - for awaitとか使うと良い感じになる
+- bindingを直接ListやForEachに渡せるように
+  - `List($directions) { $direction in`
+- listRowSeparator 関連のModifier追加
+- swipeActionModifier追加
+  - 色はtintで指定する
+  - leading, trailing両方指定する場合はModifierを2つ書く
+- 全体的にenumのシンタックスでスタイルを指定できるように
+  - `.listStyle(.inset)`
+- Tableの追加（macOS）
+- CoreData
+  - TableやListとの連携強化
+- searchableModifier追加
+  - NavigationViewに対してセットする
+  - 検索機能を簡単に載せられる
+- onDragにpreview指定ができるようになった
+- itemProvider関連のModifier追加
+  - importsItemProviders
+  - exportsItemProviders
+- SFSymbols
+  - 新しいレンダリングモード追加
+  - 使用するコンテキストに応じて適切なものを自動で選択する（.fillとかかき分ける必要がなくなる）
+- Canvasの追加
+  - drawRect的なやつ
+  - fishEyeTransformとDragGestureを組み合わせると面白い動きにできる
+- accessibillityChilrednModifier追加
+- TimelineViewの追加
+  - スクリーンセーバーみたいなものを作ったり、watchの常時点灯スクリーンの表示に使える
+  - TimelineSchedulerと組み合わせる
+- privacySensitiveModifier追加
+  - watchやwidgetでロック時にマスクできる
+- ブラーエフェクトを直接指定可能に
+  - .background(.ultraThinMaterial, in: ...)
+- safeAreaInsetModifier追加
+- previewでlandscapeの指定が可能に
+  - .previewInterfaceOrientation(.horizontal)
+- Text
+  - マークダウンをサポート
+    - AttributedStringの上で構成されている
+    - 独自のAttributeの作成も可能で、それをMarkdown内で指定することもできる
+  - dynamicTypeSizeでサイズの振り幅を指定できるように
+  - textSelectionModifierの追加
+    - テキストを簡単に選択可能にできる
+- フォーマットが簡単にできるように
+  - date.formatted()
+  - date.formatted(date: .omitted, time: .shortened) 
+  - date.formatted(.dateTime.weekday(.wide).day().month().hour().minutes())
+- TextField
+  - フォーマットを直接指定可能に
+  - onSubmit,submitLabel, .toolbarの追加
+- FocusStateの追加
+  - フォーカス状態の制御を可能に
+  - Boolだけでなく、Hashableに対応しているのでenumで指定も可能
+- Button
+  - controlSize, controlProminenceが追加され、良い感じのボタンが作りやすくなった
+  - roleプロパティの追加
+  - confirmationDialogで確認ダイアログを端末に応じて良い感じに出せるように（ActionSheet(iOS), Popover(iPad), Alert(mac)）
+- Toggle
+  - buttonスタイルが追加
+- ControlGroupでコントロールをグルーピングできる
